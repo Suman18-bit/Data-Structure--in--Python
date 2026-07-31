@@ -4,107 +4,192 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=Array+%7C+Linked+List+%7C+Stack+%7C+Queue;Hashing+%7C+Trees+%7C+and+more...;Every+DS+implemented+from+scratch+in+Python!" alt="Typing SVG" />
 
-<br/>
-
-<img src="https://img.shields.io/github/languages/top/Suman18-bit/Data-Structure--in--Python?style=for-the-badge&color=A855F7&logo=python&logoColor=white&labelColor=0d1117" />
-<img src="https://img.shields.io/github/last-commit/Suman18-bit/Data-Structure--in--Python?style=for-the-badge&color=A855F7&labelColor=0d1117" />
-<img src="https://img.shields.io/github/license/Suman18-bit/Data-Structure--in--Python?style=for-the-badge&color=A855F7&labelColor=0d1117" />
-<img src="https://img.shields.io/github/stars/Suman18-bit/Data-Structure--in--Python?style=for-the-badge&color=A855F7&labelColor=0d1117" />
-<img src="https://img.shields.io/github/forks/Suman18-bit/Data-Structure--in--Python?style=for-the-badge&color=A855F7&labelColor=0d1117" />
-
-</div>
-
-<br/>
-
-## 📌 About
-
-A growing collection of **core Data Structure implementations in pure Python** — written to reinforce fundamentals, revise for interviews, and serve as a clean reference for anyone learning DSA. Every structure is implemented from scratch (no built-in shortcuts) with readable code and inline explanations.
-
-<br/>
-
-## 🗂️ Repository Structure
-
 <div align="center">
 
-| 📁 Folder | 📖 Concept | 🐍 Status |
-|:---:|:---:|:---:|
-| [`Array`](./Array) | Arrays & core operations | ✅ |
-| [`Linked_List`](./Linked_List) | Singly / Doubly Linked Lists | ✅ |
-| [`Stack`](./Stack) | Stack (LIFO) implementation | ✅ |
-| [`Queue`](./Queue) | Queue (FIFO) implementation | ✅ |
-| [`Hashing`](./Hashing) | Hash tables & collision handling | ✅ |
-| [`Tree`](./Tree) | Binary Trees & Traversals | ✅ |
+<!-- Animated Typing SVG -->
+<a href="https://github.com/Suman18-bit/Data-Structure-in-Python">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=F75000&center=true&vCenter=true&random=false&width=600&height=50&lines=Data+Structures+in+Python;Algorithms+%7C+OOP+%7C+Efficiency;Code+%E2%9A%A1+Learn+%E2%9A%A1+Grow" alt="Typing SVG" />
+</a>
+
+<!-- Dynamic Badges -->
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Code-Quality-A%2B-brightgreen?style=for-the-badge&logo=github" alt="Quality">
+  <img src="https://img.shields.io/github/license/Suman18-bit/Data-Structure-in-Python?style=for-the-badge&color=blue" alt="License">
+  <img src="https://img.shields.io/github/last-commit/Suman18-bit/Data-Structure-in-Python?style=for-the-badge&color=orange" alt="Last Commit">
+</p>
+
+<!-- Wave Animation -->
+<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="30px" height="30px"> 
+<br>
+<i>A highly visual, well-documented collection of fundamental data structures implemented purely in Python.</i>
+
+<br>
+<hr style="border: 1px solid #3776AB; border-radius: 5px;">
 
 </div>
 
-<br/>
+## 🎯 Why this Repository?
 
-## 🛠️ Tech Stack
+> 💡 **"Choose the right data structure, and 90% of your algorithmic problems solve themselves."**
 
-<div align="center">
+Whether you are a CS student preparing for finals, a developer grinding LeetCode, or just someone curious about how things work under the hood—this repo provides clean, PEP-8 compliant, and heavily commented implementations of the most essential data structures.
 
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode&theme=dark" />
+---
 
-</div>
+## 🚀 Implemented Data Structures (Interactive)
 
-<br/>
+<details>
+  <summary><b>🟦 1. Arrays (Click to Expand)</b></summary>
+  
+  <br>
+  
+  > A collection of items stored at contiguous memory locations. 
+  
+  **Visualizing the Array:**
+  ```text
+  Index:   0    1    2    3    4
+        +----+----+----+----+----+
+  Data  | 10 | 20 | 30 | 40 | 50 |
+        +----+----+----+----+----+
+  ```
+  **Included Implementations:**
+  - [x] Dynamic Array Resizing
+  - [x] Searching & Sorting Algorithms
+  - [x] Array Rotations & Manipulations
+  
+</details>
 
-## 🚀 Getting Started
+<details>
+  <summary><b>🔗 2. Linked Lists (Click to Expand)</b></summary>
+  
+  <br>
+  
+  > A linear data structure where elements are not stored at contiguous locations, but linked using pointers.
+  
+  **Visualizing the Linked List:**
+  ```text
+  HEAD                                          TAIL
+    |                                             |
+    v                                             v
+  +----+------+     +----+------+     +----+------+
+  | 10 | next |---->| 20 | next |---->| 30 | NULL |
+  +----+------+     +----+------+     +----+------+
+  ```
+  **Included Implementations:**
+  - [x] Singly Linked List (Insert, Delete, Search)
+  - [x] Doubly Linked List
+  - [x] Cycle Detection (Floyd’s Tortoise and Hare)
+  
+</details>
 
-```bash
-# Clone the repository
-git clone https://github.com/Suman18-bit/Data-Structure--in--Python.git
+<details>
+  <summary><b>🌳 3. Trees & Traversals (Click to Expand)</b></summary>
+  
+  <br>
+  
+  > A hierarchical data structure consisting of nodes connected by edges.
+  
+  **Visualizing the Binary Tree:**
+  ```text
+          1           <-- Root
+        /   \
+       2     3        <-- Children of 1
+      / \   / \
+     4   5 6   7       <-- Leaf Nodes
+  ```
+  **Included Implementations:**
+  - [x] Binary Search Tree (BST) Insertion
+  - [x] In-Order, Pre-Order, Post-Order (DFS)
+  - [x] Level-Order Traversal (BFS)
+  
+</details>
 
-# Navigate into any topic folder
-cd Data-Structure--in--Python/Stack
+<details>
+  <summary><b>#️⃣ 4. Hashing (Click to Expand)</b></summary>
+  
+  <br>
+  
+  > A technique that maps keys to values using a hash function for O(1) average time complexity.
+  
+  **Visualizing the Hash Table:**
+  ```text
+  [ Key: "apple" ] --hash()--> [ Index: 4 ] --> [ Bucket: "A red fruit" ]
+  ```
+  **Included Implementations:**
+  - [x] Custom Hash Table class
+  - [x] Collision Resolution (Chaining)
+  - [x] Open Addressing concepts
+  
+</details>
 
-# Run a file
-python Stack.py
-```
+---
 
-<br/>
-
-## 📊 Progress Roadmap
+## 📂 Project Architecture
 
 ```text
-Array         ████████████████████ 100%
-Linked List   ████████████████████ 100%
-Stack         ████████████████████ 100%
-Queue         ████████████████████ 100%
-Hashing       ████████████████████ 100%
-Tree          ████████████████████ 100%
-Graphs        ░░░░░░░░░░░░░░░░░░░░   0%  (coming soon)
-Sorting Algos ░░░░░░░░░░░░░░░░░░░░   0%  (coming soon)
+📁 Data-Structure--in--Python/
+│
+├── 📁 .github/             # CI/CD Workflows & GitHub Actions
+├── 📁 Array/               # Arrays & dynamic resizing
+├── 📁 Hashing/             # Hash tables & collision handling
+├── 📁 Linked_List/         # Singly & Doubly Linked Lists
+├── 📁 Tree/                # Binary Trees & BST traversals
+│
+├── 📄 LICENSE              # MIT License
+└── 📄 Readme.md            # You are here ✨
 ```
 
-<br/>
+---
+
+## ⚙️ Quick Start Guide
+
+Getting this running locally is as easy as 1-2-3!
+
+**Step 1: Clone the repository**
+```bash
+git clone https://github.com/Suman18-bit/Data-Structure--in--Python.git
+```
+
+**Step 2: Navigate to the directory**
+```bash
+cd Data-Structure--in--Python
+```
+
+**Step 3: Run a module**
+```bash
+python Tree/binary_tree.py
+```
+
+> 🛠️ **Prerequisite:** Requires Python 3.8 or higher. No external dependencies required!
+
+---
 
 ## 🤝 Contributing
 
-Contributions, issues, and suggestions are welcome!
+Contributions, issues, and feature requests are what make the open-source community an amazing place to learn, inspire, and create. **Any contributions you make are greatly appreciated.**
 
-1. Fork the repo
-2. Create your branch (`git checkout -b feature/new-ds`)
-3. Commit your changes (`git commit -m 'Add: new data structure'`)
-4. Push to the branch (`git push origin feature/new-ds`)
-5. Open a Pull Request
+1. 🍴 Fork the Project
+2. 🌿 Create your Feature Branch (`git checkout -b feature/NewDataStructure`)
+3. 💻 Commit your Changes (`git commit -m 'Add some NewDataStructure'`)
+4. 🚀 Push to the Branch (`git push origin feature/NewDataStructure`)
+5. 📝 Open a Pull Request
 
-<br/>
-
-## 📜 License
-
-This project is licensed under the **GPL-3.0 License** — see the [LICENSE](./LICENSE) file for details.
-
-<br/>
-
-## 👤 Connect
+---
 
 <div align="center">
 
-<a href="https://github.com/Suman18-bit"><img src="https://img.shields.io/badge/GitHub-A855F7?style=for-the-badge&logo=github&logoColor=white" /></a>
+### 📜 License
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
-<br/><br/>
+### 💖 Support & Acknowledgements
+If you found this repository helpful, please consider giving it a star! ⭐
+<br><br>
+<img src="https://img.shields.io/github/stars/Suman18-bit/Data-Structure-in-Python?style=social" alt="Stars">
+<br><br>
+<b>Built with 💻 and ☕ by <a href="https://github.com/Suman18-bit">Suman18-bit</a></b>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:A855F7,100:0F0C29&height=120&section=footer" width="100%"/>
+<!-- Footer Animation -->
+<img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/wave.gif" width="100px" height="100px">
 
 </div>
