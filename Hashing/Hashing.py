@@ -46,7 +46,7 @@ if __name__ == "__main__":
     ht = HashTable(5)
 
     ht.insert("name", "SUMAN")
-    ht.insert("age", 25)
+    ht.insert("age", 21)
     ht.insert("city", "Nandigram")
 
     ht.display()
