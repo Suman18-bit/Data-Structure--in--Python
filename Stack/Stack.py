@@ -1,55 +1,76 @@
-class Stack:
-    def __init__(self, capacity):
-        self.capacity = capacity      # maximum size of stack
-        self.stack = [None] * capacity  # fixed-size array
-        self.top = -1                 # index of top element (-1 means empty)
+class Stack {
+    private int[] arr;   // Array to store stack elements
+    private int top;     // Index of the top element
+    private int capacity; // Maximum size of stack
 
-    # Check if stack is empty
-    def is_empty(self):
-        return self.top == -1
+    // Constructor
+    Stack(int size) {
+        arr = new int[size];
+        capacity = size;
+        top = -1; // Stack is initially empty
+    }
 
-    # Check if stack is full
-    def is_full(self):
-        return self.top == self.capacity - 1
+    // Push operation
+    public void push(int x) {
+        if (isFull()) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        arr[++top] = x;
+        System.out.println("Inserted " + x);
+    }
 
-    # Push an element onto the stack
-    def push(self, item):
-        if self.is_full():
-            raise OverflowError("Stack overflow: cannot push, stack is full")
-        self.top += 1
-        self.stack[self.top] = item
+    // Pop operation
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        return arr[top--];
+    }
 
-    # Pop an element from the stack
-    def pop(self):
-        if self.is_empty():
-            raise IndexError("Stack underflow: cannot pop, stack is empty")
-        item = self.stack[self.top]
-        self.stack[self.top] = None   # optional: clear the slot
-        self.top -= 1
-        return item
+    // Peek operation
+    public int peek() {
+        if (!isEmpty()) {
+            return arr[top];
+        } else {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+    }
 
-    # Peek at the top element
-    def peek(self):
-        if self.is_empty():
-            raise IndexError("Peek from empty stack")
-        return self.stack[self.top]
+    // Utility functions
+    public boolean isEmpty() {
+        return top == -1;
+    }
 
-    # Get current size
-    def size(self):
-        return self.top + 1
+    public boolean isFull() {
+        return top == capacity - 1;
+    }
 
-    # Display stack contents
-    def display(self):
-        print("Stack:", self.stack[:self.top+1])
+    // Print stack
+    public void printStack() {
+        for (int i = 0; i <= top; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
 
+// Driver code
+public class Main {
+    public static void main(String[] args) {
+        Stack stack = new Stack(5);
 
-# Example usage
-stack = Stack(5)   # stack with capacity 5
-stack.push(10)
-stack.push(20)
-stack.push(30)
-stack.display()       # Stack: [10, 20, 30]
-print(stack.pop())    # 30
-print(stack.peek())   # 20
-print(stack.size())   # 2
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
 
+        stack.printStack(); // Output: 10 20 30
+
+        System.out.println("Top element: " + stack.peek()); // 30
+
+        stack.pop();
+        stack.printStack(); // Output: 10 20
+    }
+}
