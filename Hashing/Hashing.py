@@ -1,49 +1,56 @@
-class Stack:
-    def __init__(self):
-        self.stack = []  # using Python list
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]  # list of lists
 
-    # Push operation
-    def push(self, item):
-        self.stack.append(item)
-        print(f"Pushed {item}")
+    # Hash function
+    def _hash(self, key):
+        return hash(key) % self.size
 
-    # Pop operation
-    def pop(self):
-        if self.isEmpty():
-            print("Stack Underflow")
-            return None
-        return self.stack.pop()
+    # Insert key-value pair
+    def insert(self, key, value):
+        index = self._hash(key)
+        # Check if key already exists → update
+        for pair in self.table[index]:
+            if pair[0] == key:
+                pair[1] = value
+                return
+        # Otherwise, add new pair
+        self.table[index].append([key, value])
 
-    # Peek operation
-    def peek(self):
-        if self.isEmpty():
-            print("Stack is empty")
-            return None
-        return self.stack[-1]
+    # Search by key
+    def search(self, key):
+        index = self._hash(key)
+        for pair in self.table[index]:
+            if pair[0] == key:
+                return pair[1]
+        return None
 
-    # Check if empty
-    def isEmpty(self):
-        return len(self.stack) == 0
+    # Delete by key
+    def delete(self, key):
+        index = self._hash(key)
+        for i, pair in enumerate(self.table[index]):
+            if pair[0] == key:
+                del self.table[index][i]
+                return True
+        return False
 
-    # Size of stack
-    def size(self):
-        return len(self.stack)
-
-    # Print stack
-    def printStack(self):
-        print("Stack:", self.stack)
+    # Display table
+    def display(self):
+        for i, bucket in enumerate(self.table):
+            print(f"Index {i}: {bucket}")
 
 
 # Driver code
 if __name__ == "__main__":
-    s = Stack()
-    s.push(10)
-    s.push(20)
-    s.push(30)
+    ht = HashTable(5)
 
-    s.printStack()   # Output: Stack: [10, 20, 30]
+    ht.insert("name", "SUMAN")
+    ht.insert("age", 25)
+    ht.insert("city", "Nandigram")
 
-    print("Top element:", s.peek())  # Output: 30
+    ht.display()
+    print("Search 'city':", ht.search("city"))
 
-    s.pop()
-    s.printStack()   # Output: Stack: [10, 20]
+    ht.delete("age")
+    ht.display()
