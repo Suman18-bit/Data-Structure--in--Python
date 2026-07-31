@@ -1,76 +1,49 @@
-class Stack {
-    private int[] arr;   // Array to store stack elements
-    private int top;     // Index of the top element
-    private int capacity; // Maximum size of stack
+class Stack:
+    def __init__(self):
+        self.stack = []  # using Python list
 
-    // Constructor
-    Stack(int size) {
-        arr = new int[size];
-        capacity = size;
-        top = -1; // Stack is initially empty
-    }
+    # Push operation
+    def push(self, item):
+        self.stack.append(item)
+        print(f"Pushed {item}")
 
-    // Push operation
-    public void push(int x) {
-        if (isFull()) {
-            System.out.println("Stack Overflow");
-            return;
-        }
-        arr[++top] = x;
-        System.out.println("Inserted " + x);
-    }
+    # Pop operation
+    def pop(self):
+        if self.isEmpty():
+            print("Stack Underflow")
+            return None
+        return self.stack.pop()
 
-    // Pop operation
-    public int pop() {
-        if (isEmpty()) {
-            System.out.println("Stack Underflow");
-            return -1;
-        }
-        return arr[top--];
-    }
+    # Peek operation
+    def peek(self):
+        if self.isEmpty():
+            print("Stack is empty")
+            return None
+        return self.stack[-1]
 
-    // Peek operation
-    public int peek() {
-        if (!isEmpty()) {
-            return arr[top];
-        } else {
-            System.out.println("Stack is empty");
-            return -1;
-        }
-    }
+    # Check if empty
+    def isEmpty(self):
+        return len(self.stack) == 0
 
-    // Utility functions
-    public boolean isEmpty() {
-        return top == -1;
-    }
+    # Size of stack
+    def size(self):
+        return len(self.stack)
 
-    public boolean isFull() {
-        return top == capacity - 1;
-    }
+    # Print stack
+    def printStack(self):
+        print("Stack:", self.stack)
 
-    // Print stack
-    public void printStack() {
-        for (int i = 0; i <= top; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-}
 
-// Driver code
-public class Main {
-    public static void main(String[] args) {
-        Stack stack = new Stack(5);
+# Driver code
+if __name__ == "__main__":
+    s = Stack()
+    s.push(10)
+    s.push(20)
+    s.push(30)
 
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
+    s.printStack()   # Output: Stack: [10, 20, 30]
 
-        stack.printStack(); // Output: 10 20 30
+    print("Top element:", s.peek())  # Output: 30
 
-        System.out.println("Top element: " + stack.peek()); // 30
-
-        stack.pop();
-        stack.printStack(); // Output: 10 20
-    }
-}
+    s.pop()
+    s.printStack()   # Output: Stack: [10, 20]
