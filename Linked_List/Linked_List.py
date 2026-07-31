@@ -1,80 +1,65 @@
-// Node class
-class Node {
-    int data;
-    Node next;
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
+# LinkedList class
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-// LinkedList class
-class LinkedList {
-    Node head; // first node
+    # Insert at end
+    def insert(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
 
-    // Insert at end
-    public void insert(int data) {
-        Node newNode = new Node(data);
+    # Delete by value
+    def delete(self, key):
+        temp = self.head
 
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+        # If head node itself holds the key
+        if temp and temp.data == key:
+            self.head = temp.next
+            temp = None
+            return
 
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = newNode;
-    }
+        # Search for the key
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
 
-    // Delete by value
-    public void delete(int key) {
-        Node temp = head, prev = null;
+        # If key not found
+        if temp is None:
+            return
 
-        // If head node itself holds the key
-        if (temp != null && temp.data == key) {
-            head = temp.next; // change head
-            return;
-        }
+        # Unlink the node
+        prev.next = temp.next
+        temp = None
 
-        // Search for the key
-        while (temp != null && temp.data != key) {
-            prev = temp;
-            temp = temp.next;
-        }
+    # Print list
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
 
-        // If key not found
-        if (temp == null) return;
+# Driver code
+if __name__ == "__main__":
+    llist = LinkedList()
+    llist.insert(10)
+    llist.insert(20)
+    llist.insert(30)
 
-        // Unlink the node
-        prev.next = temp.next;
-    }
+    llist.print_list()   # Output: 10 -> 20 -> 30 -> None
 
-    // Print list
-    public void printList() {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " -> ");
-            temp = temp.next;
-        }
-        System.out.println("null");
-    }
-}
-
-// Driver code
-public class Main {
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-
-        list.insert(10);
-        list.insert(20);
-        list.insert(30);
-
-        list.printList(); // Output: 10 -> 20 -> 30 -> null
-
-        list.delete(20);
-        list.printList(); // Output: 10 -> 30 -> null
-    }
-}
+    llist.delete(20)
+    llist.print_list()   # Output: 10 -> 30 -> None
